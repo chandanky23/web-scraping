@@ -3,8 +3,8 @@
 ## Configuring the app (Considering python 3 is installed and using pip3 to install other dependencies)
 
 * Create a virtual environment `virtual env .` ***(. represents same folder, can also do `/env`)***
-* Instal dependencies
-  * > pip3 install Scrapy, flask
+* Instal dependencies:
+  > pip3 install Scrapy, flask
 
 ## Run the application
 
@@ -28,3 +28,6 @@
 
   here **scrapy crawl** is the command, followed by **quotes** as the name of the scrape operation and finally the filename, i.e **quotes.json(also .xml and .csv)**
 
+## Database
+
+click [SQLITE3 database](https://github.com/chandanky23/web-scraping/blob/master/ScrapeThisWeb/ScrapeThisWeb/readme.md) for creating and storing scraped data

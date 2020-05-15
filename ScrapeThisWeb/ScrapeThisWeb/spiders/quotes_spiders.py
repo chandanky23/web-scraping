@@ -12,7 +12,7 @@ class QuoteSpider(scrapy.Spider) :
     items = ScrapethiswebItem();
 
     all_div_quotes = response.css('div.quote');
-    
+
     for quotes in all_div_quotes:
       title = quotes.css('span.text::text').extract();
       author = quotes.css('.author::text').extract();
@@ -23,3 +23,8 @@ class QuoteSpider(scrapy.Spider) :
       items['tags'] = tags
       
       yield items
+
+    next_page = response.css('li.next a::attr(href)').get() # get() to get the value
+
+    if next_page is not None:
+      yield response.follow(next_page, callback=self.parse)
