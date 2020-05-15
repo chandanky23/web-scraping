@@ -27,3 +27,41 @@
   >>>
 
   here **scrapy crawl** is the command, followed by **quotes** as the name of the scrape operation and finally the filename, i.e **quotes.json(also .xml and .csv)**
+
+## Storing scraped data in a Database
+
+### Sqlite3
+
+This database is provided by default and hence can be used to store the scrapped data.
+
+#### config
+
+* create a filename database.py
+* add `import sqlite3`
+* create a connection `connection = sqlite3.connect('<add your db name follwed by .db extension>')`
+* assign a cursor `curr = connection.cursor()`
+* call the execute method to create a table in the db
+* commit the changes
+* close the connection
+
+>>>
+  import sqlite3
+  
+  connection = sqlite3.connect('quotesData.db');
+  curr = connection.cursor();
+
+  curr.execute(
+    """
+      create a table quotes_table(
+        title text,
+        author text,
+        tag text
+      )
+    """
+  )
+
+  connection.commit()
+  connection.close()
+>>>
+
+***tripple `"""` is used to add multiline code***
