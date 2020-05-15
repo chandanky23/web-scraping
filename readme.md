@@ -1,5 +1,11 @@
 # Web Scraping in Python 3 using Scrapy
 
+## Configuring the app (Considering python 3 is installed and using pip3 to install other dependencies)
+
+* Create a virtual environment `virtual env .` ***(. represents same folder, can also do `/env`)***
+* Instal dependencies
+  * > pip3 install Scrapy, flask
+
 ## Run the application
 
   `scrapy crawl quotes` (quotes is the name of the spider)
