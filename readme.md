@@ -40,7 +40,7 @@ This database is provided by default and hence can be used to store the scrapped
 * add `import sqlite3`
 * create a connection `connection = sqlite3.connect('<add your db name follwed by .db extension>')`
 * assign a cursor `curr = connection.cursor()`
-* create a table in the db
+* create a table in the db (***if needed: drop the table if already created***)
 * insert data in the table
 * commit the changes
 * close the connection
@@ -53,10 +53,10 @@ This database is provided by default and hence can be used to store the scrapped
     
     curr.execute(
     """
-        create a table quotes_table(
+        create table quotes_table(
           title text,
           author text,
-          tag text
+          tags text
         )
       """
     )
@@ -64,6 +64,7 @@ This database is provided by default and hence can be used to store the scrapped
     connection.commit()
     connection.close()
 >>>
+***this will create a database named `quotesData.db` in the project root folder***
 
 Insert a row in the above created table: `quotes_table`
 >>>
@@ -76,6 +77,11 @@ Insert a row in the above created table: `quotes_table`
         )
       """
     )
+>>>
+
+Drop a table if created: `quotes_table`
+>>>
+    curr.execute("""DROP TABLE IF EXISTS <table name>""")
 >>>
 
 ***tripple `"""` is used to add multiline code***
