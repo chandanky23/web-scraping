@@ -2,7 +2,7 @@
 
 ## Run the application
 
-  `scrapy crawal quotes` (quotes is the name of the spider)
+  `scrapy crawl quotes` (quotes is the name of the spider)
 
 ## Save the scrapped data as file (json/xml/csv)
 
