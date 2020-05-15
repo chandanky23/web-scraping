@@ -4,6 +4,14 @@
 
   `scrapy crawl quotes` (quotes is the name of the spider)
 
+## Adding pipelines to store the containers in a database (this file is automatically created by Scrapy)
+
+* Goto settings.py file located inside ScrapeThisWeb folder.
+* Search for `pipelines`
+* uncomment this following line `ITEM_PIPELINES = { 'ScrapeThisWeb.pipelines.ScrapethiswebPipeline': 300 }`
+  
+***note:*** 300 here represents priority and if there are other pipelines like above , then lower value represents higer priority.
+
 ## Save the scrapped data as file (json/xml/csv)
 
   >>>
