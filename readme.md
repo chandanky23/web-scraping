@@ -44,9 +44,12 @@ This database is provided by default and hence can be used to store the scrapped
 * commit the changes
 * close the connection
 
+>>>
     import sqlite3
+    
     connection = sqlite3.connect('quotesData.db');
     curr = connection.cursor();
+    
     curr.execute(
     """
         create a table quotes_table(
@@ -56,7 +59,8 @@ This database is provided by default and hence can be used to store the scrapped
         )
       """
     )
+    
     connection.commit()
     connection.close()
-
+>>>
 ***tripple `"""` is used to add multiline code***
